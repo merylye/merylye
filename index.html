@@ -1,59 +1,91 @@
 <!DOCTYPE html>
+
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="generator" content="pandoc">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-  <title>Meryl Ye</title>
-  <style type="text/css">
-    code {
-      white-space: pre;
-    }
-  </style>
-  <style type="text/css">
-    body {
-      margin: 40px auto;
-      max-width: 650px;
-      line-height: 1.5;
-      padding: 0 10px;
-      font-family: sans-serif;
+<body style="background-color:#fff;">
+
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Karla|Almarai|Rock+Salt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title> Meryl Ye </title>
+    <meta name="description" content="Student at Cornell University, CS." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.4/mobile-detect.min.js"></script>
+  </head>
+
+  <div class="tab">
+    <button class="tabs active" onclick="showNewTab(event, 'home')">Home</button>
+    <button class="tabs" onclick="showNewTab(event, 'about me')">About Me</button>
+    <button class="tabs" onclick="showNewTab(event, 'research')">Research</button>
+    <button class="tabs" onclick="showNewTab(event, 'contact')">Contact</button>
+  </div>
+
+
+  <div style="margin:auto;width:900px;vertical-align:middle;">
+    <div id="home" class="body">
+      <div class="profile-crop">
+        <img src="img/me.jpg" alt="avatar">
+      </div>
+      <div style="margin-left:-25px;">
+        <img style="width:75%;" src="img/sign.jpg" alt="sign">
+      </div>
+
+      <h2>
+        I am a computer science student at <span class="emphasis">Cornell University</span> interested in human-robot
+        interaction. <br>
+        <a href="fall2022resume.pdf">Resume</a>
+      </h2>
+    </div>
+
+    <div id="about me" class="body" style="display:none;">
+      <h2 style="margin-top:100px;">
+        <span class="emphasis">I'm currently located in:</span> Ithaca, NY <br>
+        <span class="emphasis">I like:</span> running, swimming, Marvel movies<br>
+      </h2>
+    </div>
+
+    <div id="research" class="body" style="display:none;">
+      <h2 style="margin-top:50px;">
+        I conduct research in the <span class="emphasis"><a href="https://riglab.infosci.cornell.edu/"
+            target="_blank">Robots in Groups Lab</a></span> under Professor Malte Jung. <br>
+        <a href="BCIResearch.pdf">BCI Research</a></li>
+      </h2>
+    </div>
+
+    <div id="contact" class="body" style="display:none;">
+      <h2 style="margin-top:50px;">
+        Email <br>
+        <a href="https://www.linkedin.com/in/meryl-y-551028171/">LinkedIn</a>
+      </h2>
+    </div>
+
+  </div>
+
+  <script>
+
+    var md = new MobileDetect(window.navigator.userAgent);
+    if (md.mobile() || md.tablet()) {
+      document.location.href = 'mobile.html';
     }
 
-    pre {
-      background: rgba(0, 0, 0, 0.05);
-      padding: 5px;
+    function showNewTab(event, newTab) {
+      var i, body, tabs;
+
+      body = document.getElementsByClassName("body");
+      for (i = 0; i < body.length; i++) {
+        body[i].style.display = "none";
+      }
+
+      tabs = document.getElementsByClassName("tabs");
+      for (i = 0; i < tabs.length; i++) {
+        tabs[i].className = tabs[i].className.replace(" active", "");
+      }
+
+      document.getElementById(newTab).style.display = "block";
+      event.currentTarget.className += " active";
     }
-  </style>
-</head>
 
-<body>
-  <header>
-
-    <h1>Meryl Ye</h1>
-    <p>
-    </p>
-  </header>
-  <p>Hi, my name is Meryl. I'm a computer science student at Cornell University interested in human-robot interaction,
-  </p>
-  <h3 id="projects">Projects</h3>
-  <ul>
-    <li><a href="fall2022resume.pdf">Resume</a></li>
-  </ul>
-  <h3 id="current-work">Current Work</h3>
-  <ul>
-    <li>Robots in Groups</li>
-  </ul>
-  <h3 id="past-work">Past Work</h3>
-  <ul>
-    <li>Verizon</li>
-    <li><a href="BCIResearch.pdf">Research</a></li>
-  </ul>
-  <h3 id="how-to-contact-me">How to contact me</h3>
-  <ul>
-    <li>may43@cornell.edu</li>
-    <li><a href="https://www.linkedin.com/in/meryl-y-551028171/">LinkedIn</a></li>
-  </ul>
-</body>
+  </script>
 
 </html>
