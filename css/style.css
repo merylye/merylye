@@ -87,14 +87,14 @@ img {
 }
 
 a {
-  color: #333333;
+  color: #0055fe;
   background-color: transparent;
-  text-decoration: underline dotted;
+  text-decoration: underline;
   transition: 0.2s;
 }
 
 a:hover {
-  color: #fafafa;
+  color: #0055fe95;
 }
 
 .tab button {
