@@ -79,10 +79,12 @@ img {
 
 .img {
   /* display:block; */
+  position: absolute;
   width: 180px;
   height: 180px;
   margin-top: 60px;
   margin-left: 550px;
+  overflow: hidden;
   /* object-fit: contain; */
 }
 
