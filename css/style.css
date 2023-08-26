@@ -61,19 +61,11 @@ img {
 
 .body {
   width: 600px;
-  height: 100px;
+  /* height: 100px; */
+  overflow: auto;
   display: block;
   margin-left: 130px;
   margin-top: 15%;
-}
-
-.longbody {
-  width: 600px;
-  height: 1000px;
-  display: block;
-  margin-left: 130px;
-  margin-top: 15%;
-  /* margin-bottom: 15%; */
 }
 
 .profile-crop {
