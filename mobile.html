@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html>
 
 <body style="background-color:#daf7fa;">
@@ -7,7 +9,9 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <title> Meryl Ye </title>
     <meta name="description" content="Student at Cornell University, CS." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mobile-detect@1.4.4/mobile-detect.min.js"></script>
   </head>
 
     <!-- Google tag (gtag.js) -->
@@ -20,16 +24,127 @@
     gtag('config', 'G-XKEH9C0MFJ');
   </script>
 
-  <div style="margin:auto;width:900px;vertical-align:middle;">
+  <div class="tab">
+    <button class="tabs active" onclick="showNewTab(event, 'home')">home</button>
+    <button class="tabs" onclick="showNewTab(event, 'about me')">about me</button>
+    <button class="tabs" onclick="showNewTab(event, 'research')">research</button>
+    <button class="tabs" onclick="showNewTab(event, 'news')">news</button>
+  </div>
 
-    <div id="home" class="body" style="margin-left:20px;">
-      <h2 style="width:700px;">
-        <span class="emphasis" style="font-size:7em;line-height: 100px;"> Loading... </span><br><br><br>
-        <span style="font-size:5em;line-height: 100px;">Just kidding. Please view this site on desktop.<br>
-        It looks better there.</span>
+
+  <div style="margin:auto;width:900px;vertical-align:middle;">
+    <div id="home" class="body">
+      <div class="profile-crop">
+        <img src="img/me.jpg" alt="avatar">
+      </div>
+      <div style="margin-left:-25px;">
+        <h1>Hi, I'm Meryl. </h1><br><br><br><br>
+        <h2>
+          I am a computer science student at <a href="https://www.cornell.edu/">Cornell University</a> curious about 
+          human-computer interaction and social computing. <br><br>
+          For reference, my <a href="YeResume.pdf">resume</a>. <br><br>
+          <i>
+            To contact me:
+            <ul>
+              <li> my email is may43 [at] cornell [dot] edu</li>
+              <li> my <a href="https://www.linkedin.com/in/meryl-y-551028171/">LinkedIn</a> </li>
+            </ul>
+          </i>
+        </h2>
+      </div>
+
+    </div>
+
+    <div id="about me" class="body" style="display:none;">
+      <h2 style="margin-top:100px;">
+        <span class="emphasis">I'm located in:</span> Ithaca, NY <br>
+        <span class="emphasis">I enjoy:</span> running, swimming, piano, Marvel movies, origami <br>
+        <span class="emphasis">I'm trying to learn:</span> watercolor <br>
+        <span class="emphasis">I'm reading:</span> <a
+          href="https://www.amazon.com/Your-Wit-My-Command-Building/dp/0262045990">Your
+          Wit Is My Command: Building AIs with a Sense of Humor</a> by Tony Veale
+        <br>
       </h2>
     </div>
 
+    <div id="research" class="body" style="display:none;">
+      <h2>
+        I investigate the complex relationships and interactions involving people and technology. <br><br>
+
+        <span class="emphasis">Publications:</span> <br>
+        <span style="font-size:11pt;">
+          Meryl Ye, Rei (Wen-Ying) Lee, Johan Michalove, and Jessie Wong. 2023.
+          Toaster Bot: Designing for Utility and Enjoyability in the Kitchen Space.
+          In Companion of the 2023 ACM/IEEE International Conference on Human-Robot
+          Interaction (HRI '23). Association for Computing Machinery,
+          New York, NY, USA, 787–790. <a
+            href="https://doi.org/10.1145/3568294.3580182">https://doi.org/10.1145/3568294.3580182</a>
+          [<a href="ToasterPoster.pdf">Poster</a>][<a href="https://youtu.be/tkroipJ-gzg">Video</a>] <br><br>
+          M. Ye, E. Schneiders, W. -Y. Lee and M. Jung, "The Future of Home Appliances: A Study on the Robotic Toaster as a Domestic Social Robot," 2023 32nd IEEE International Conference on Robot and Human Interactive Communication (RO-MAN), Busan, Korea, Republic of, 2023, pp. 477-482, doi: <a
+          href="https://ieeexplore.ieee.org/document/10309555">10.1109/RO-MAN57019.2023.10309555</a>. [<a href="FutureAppliance.pdf">Paper</a>][<a href="https://youtu.be/TFpHq0moOmM">Video</a>]
+        </span>
+        <br><br>
+
+        <span class="emphasis">Other Work:</span> <br>
+        <span style="font-size:11pt;">
+          Watch the <a href="https://www.youtube.com/playlist?list=PLOMiQvOmbgxfWQscg9jRBRB22D0a4eHFT">toaster vignettes</a>! <br><br>
+
+          For the final project of CS 6850, Ruqing Xu and I investigated factors of persuasion in an online social network.<br>
+          Read the <a href="CS6850.pdf">paper</a>. <br><br>
+
+          I previously conducted an independent biomedical research project at the University of Tennessee. I studied
+          brain-computer interfaces aiming to improve student learning. <br>
+          Check out the <a href="BCIResearch.pdf">poster</a>. <br><br>
+        </span>
+        <br>
+
+      </h2>
+    </div>
+
+    <div id="news" class="body" style="display:none;">
+      <div class="img">
+        <img src="ToasterBot.jpg" alt="toaster">
+      </div>
+      <div style="margin-left:-25px;">
+        <h2>
+          <span class="emphasis">March 13, 2023:</span>
+          Debut of <a href="https://spectrum.ieee.org/human-robot-interaction-2659586979">Toaster Bot</a> at HRI.
+          <br>
+          <span class="emphasis">August 29, 2023:</span>
+          I present <a href="https://ieeexplore.ieee.org/document/10309555">The Future of Home Appliances</a> at RO-MAN.
+          <br>
+          <span class="emphasis">December 17, 2023:</span>
+          I graduate from Cornell University with a B.S. in Computer Science. 
+        </h2>
+      </div>
+    </div>
+
   </div>
+
+  <script>
+
+    var md = new MobileDetect(window.navigator.userAgent);
+    if (md.mobile() || md.tablet()) {
+      document.location.href = 'mobile.html';
+    }
+
+    function showNewTab(event, newTab) {
+      var i, body, tabs;
+
+      body = document.getElementsByClassName("body");
+      for (i = 0; i < body.length; i++) {
+        body[i].style.display = "none";
+      }
+
+      tabs = document.getElementsByClassName("tabs");
+      for (i = 0; i < tabs.length; i++) {
+        tabs[i].className = tabs[i].className.replace(" active", "");
+      }
+
+      document.getElementById(newTab).style.display = "block";
+      event.currentTarget.className += " active";
+    }
+
+  </script>
 
 </html>
